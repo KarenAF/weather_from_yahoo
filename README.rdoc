@@ -1,5 +1,18 @@
 == README
 
+Peter Jang [7:40 PM]  
+Exercise: Yahoo has a free API for weather conditions and forecast. For example:
+
+https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys  
+
+will give you the current conditions and 5 day forecast of Nome, AK. Find where it says Nome and AK inside this url and replace them with your own city and state.
+
+1. Create another app called weather_from_yahoo (skip test-unit and active-record) and display the current temperature of your hometown.
+
+2. Now, also display the 5 day forecast of your hometown.
+
+3. Allow a user to enter a city and state and get the temperature and 5 day forecast for that city.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
