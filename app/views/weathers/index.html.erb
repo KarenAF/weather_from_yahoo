@@ -1,0 +1,29 @@
+<h1><%= @city %> Weather Forecast</h1>
+
+Search weather for a city:
+<%= form_tag '/', method: :get, class: "navbar-form navbar-left" do %>
+  <div class = "form-group">
+      <%= text_field_tag :city, "", class: "form-control", placeholder: "city" %>
+      <%= text_field_tag :state, "", class: "form-control", placeholder: "state" %>
+  </div>
+      <%= submit_tag "Submit", class: "btn btn-default" %>
+<% end %>
+
+<h3> Temperature in <%= @city %>, <%=@state %>: <%= @current_temp %> degrees F
+</h3>
+<br>
+<h2> Five-Day Forecast for <%= @city %>, <%=@state %>: </h2>
+<br>
+<% @forecast[0..4].each do |day| %>
+  <%= day['date'] %>, 
+  <%= day['day'] %>
+  <br>
+  high <%= day['high'] %>
+  <br>
+  low <%= day['low'] %>
+  <br>
+  <%= day['text'] %>
+  <br>
+  <br>
+  <br>
+ <% end %> 
